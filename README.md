@@ -1,9 +1,9 @@
 # PraxInTec
 Repositorio Proyecto de PraxInTec
 
-Integrantes:
+# Integrantes:
 
-Adriana Vásquez,
-Jesús David Redondo,
-Danny González,
-Johan Miranda
+- Adriana Vásquez
+- Jesús David Redondo
+- Danny González
+- Johan Miranda
