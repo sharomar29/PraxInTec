@@ -1,0 +1,10 @@
+Mi nombes es Danny Puin, proactivo y colaborativo.
+
+Estudiante de ingenieria de sistemas, a punto de culminar.
+Trabajo en una entidad financiera desempeñando el rol de analitico
+enfocado en las cifras del negocio de vivienda.
+Manejo python, visualizadores y modelamiento.
+
+Participo en el equipo BocalenosWeb.
+Desempeño el rol de Administrador  de Bd,
+Gestionar y disponer el motor de base de datos para el proyecto de desarrollo de software.
