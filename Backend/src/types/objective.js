@@ -6,11 +6,11 @@ const objectiveType = gql`
         _id: ID!
         description: String
         objectiveType: String
-        projects: [Project]
+        projects: ID
     }
      type User{
         _id: ID!
-         name: String
+        name: String
         lastName: String
         identification: String
         email: String!
@@ -18,14 +18,21 @@ const objectiveType = gql`
         role: String
         state: String
         projects:[Project]
+        inscriptions:[Inscription]
+        advances:[Advance]
     }
     type Project{
         _id: ID!
-        name: String
+         name: String
         startDate: String
         endDate: String
         isActive: Boolean
         leader: ID
+        phase: String
+        budget: String
+        objectives: [Objective]
+        inscriptions:[Inscription]
+        advances:[Advance]
     }
     type Query{
         getObjectives:[Objective]
@@ -36,13 +43,15 @@ const objectiveType = gql`
         createObjective(
             description: String
              objectiveType: String
-             projects: ID
         ): Objective
         updateObjective(
             _id: ID!
             description: String
             objectiveType: String
             projects: ID
+        ):Objective
+        deleteObjective(
+            _id: ID!
         ):Objective
     }
 

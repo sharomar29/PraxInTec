@@ -7,12 +7,12 @@ const advanceType = gql`
         date: Date
         description: String
         observation: String
-        creators: [User]
-        projects:[Project]
+        creators: ID
+        projects:ID
     }
      type User{
         _id: ID!
-        name: String
+       name: String
         lastName: String
         identification: String
         email: String!
@@ -20,6 +20,8 @@ const advanceType = gql`
         role: String
         state: String
         projects:[Project]
+        inscriptions:[Inscription]
+        advances:[Advance]
     }
     type Project{
         _id: ID!
@@ -28,6 +30,11 @@ const advanceType = gql`
         endDate: String
         isActive: Boolean
         leader: ID
+        phase: String
+        budget: String
+        objectives: [Objective]
+        inscriptions: [Inscription]
+        advances:[Advance]
     }
     type Query{
         getAdvances:[Advance]
@@ -47,8 +54,9 @@ const advanceType = gql`
             date: Date
             description: String
             observation: String
-            creators: ID
-            projects:ID
+        ):Advance
+         deleteAdvance(
+            _id: ID!
         ):Advance
     }
 

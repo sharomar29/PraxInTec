@@ -9,12 +9,12 @@ createProject = async (project) => {
 }
 
 getProjects = async () => {
-    let projects = await Project.find({})
+    let projects = await Project.find({}).populate("objectives").populate("advances").populate("inscriptions")
     return projects
 }
 
 getProjectById = async (projectId) => {
-    let project = await Project.findById(projectId).exec()
+    let project = await Project.findById(projectId).populate("objectives").populate("advances").populate("inscriptions")
     return project
 }
 
@@ -23,9 +23,46 @@ updateProject = async (projectId, project) => {
     return newProject
 }
 
+deleteProject = async (projectId) => {
+    let project = await Project.findByIdAndDelete(projectId)
+    return project
+}
+
+UpdateObjective = async (projectId, objectiveId) => {
+    let project = await Project.findByIdAndUpdate(projectId, {
+        $push: {
+            objectives: objectiveId
+        }
+    })
+    return project
+}
+
+UpdateAdvanceProjects = async (projectId, advanceId) => {
+    let project = await Project.findByIdAndUpdate(projectId, {
+        $push: {
+            advances: advanceId
+        }
+    })
+    return project
+}
+
+UpdateInscription = async (projectId, inscriptionId) => {
+    let project = await Project.findByIdAndUpdate(projectId, {
+        $push: {
+            inscriptions: inscriptionId
+        }
+    })
+    return project
+}
+
+
 module.exports = {
     createProject,
     getProjects,
     getProjectById,
-    updateProject
+    updateProject,
+    deleteProject,
+    UpdateObjective,
+    UpdateAdvanceProjects,
+    UpdateInscription
 }

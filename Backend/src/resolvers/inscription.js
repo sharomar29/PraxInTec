@@ -5,11 +5,12 @@ const inscriptionResolvers ={
     Query:{
         getInscriptions: async(parent,args) =>{
             // lógica del proceso
-            let inscriptions  = await userService.getInscriptions()
+            let inscriptions  = await inscriptionService.getInscriptions()
             return inscriptions
         },
         getInscriptionById: async (parent,args)=>{
             let inscription = await inscriptionService.getInscriptionById(args._id)
+            return inscription
         }
     },
     Mutation:{

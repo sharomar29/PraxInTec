@@ -4,6 +4,7 @@ const projectResolvers = {
     Query: {
         getProjects: async (parent, args) => {
             let project = projectService.getProjects()
+            
             return project
         },
         getProjectById: async (parent, args) => {
@@ -19,6 +20,10 @@ const projectResolvers = {
         updateProject: async (parent, args) => {
             let project = projectService.updateProject(args._id, args)
             return project
+        },
+        deleteProject: async (parent, args) => {
+            let project_delete = projectService.deleteProject(args._id)
+            return project_delete
         }
     }
 }

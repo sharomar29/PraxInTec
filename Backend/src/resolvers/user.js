@@ -10,6 +10,7 @@ const userResolvers ={
         },
         getUserById: async (parent,args)=>{
             let user = await userService.getUserById(args._id)
+            return user
         }
     },
     Mutation:{
@@ -20,6 +21,14 @@ const userResolvers ={
         updateUser: async (parent,args) =>{
             let user_update = userService.updateUser(args._id,args)
             return user_update
+        },
+        loginUser: async (parent,args) => {
+            let login_user = userService.loginUser(args.user, args.email)
+            return login_user
+        },
+        deleteUser: async (parent, args) => {
+            let user_delete = userService.deleteUser(args._id)
+            return user_delete
         }
     }
 }

@@ -11,13 +11,21 @@ const userType = gql`
         role: String
         state: String
         projects:[Project]
+        inscriptions:[Inscription]
+        advances:[Advance]
     }
     type Project{
         _id: ID!
         name: String
-        description: String
-        topic: String
-        owner: ID
+        startDate: String
+        endDate: String
+        isActive: Boolean
+        leader: ID
+        phase: String
+        budget: String
+        objectives: [Objective]
+        inscriptions: [Inscription]
+        advances:[Advance]
     }
 
     type Query {
@@ -36,15 +44,22 @@ const userType = gql`
         ): User
         updateUser(
             _id: ID!
-           name: String
-          lastName: String
-        identification: String
-        email: String!
-        password: String!
-        role: String
-        state: String
+            name: String
+            lastName: String
+            identification: String
+            email: String!
+            password: String!
+            role: String
+            state: String
         ): User
+        deleteUser(
+            _id: ID!
+        ): User
+        loginUser(
+            email: String
+            password: String
+        ):User
     }
 `;
 
-module.exports = {userType}
+module.exports = { userType }

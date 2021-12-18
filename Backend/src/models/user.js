@@ -15,6 +15,7 @@ const UserSchema = new Schema({
     },
     email:{
         type: String,
+        unique: true,
         required: true
     },
     password: {
@@ -23,8 +24,8 @@ const UserSchema = new Schema({
     },
     role: {
         type: String,
-        enum : ['admin','user'],
-        default : 'user'
+        enum : ['administrador','estudiante','lider','usuario'],
+        default : 'usuario'
     },
     estate: {
         type: String,
@@ -34,6 +35,14 @@ const UserSchema = new Schema({
     projects:[{
         type: Schema.Types.ObjectId,
         ref: "Project"
+    }],
+    inscriptions:[{
+        type: Schema.Types.ObjectId,
+        ref: "Inscription"
+    }],
+    advances:[{
+        type: Schema.Types.ObjectId,
+        ref: "Advance"
     }]
 })
 

@@ -10,6 +10,7 @@ const objectiveResolvers ={
         },
         getObjectiveById: async (parent,args)=>{
             let objective = await objectiveService.getObjectiveById(args._id)
+            return objective
         }
     },
     Mutation:{

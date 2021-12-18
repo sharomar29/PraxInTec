@@ -11,19 +11,19 @@ const InscriptionSchema = new  Schema({
         default: 'aceptado'
     },
     admissionDate: {
-        type: Date
+        type: String
     },
     dischageDate: {
-        type: Date
+        type: String
     },
-    students: {
+    students: [{
         type: Schema.Types.ObjectId,
         ref: "User"
-    },
-    projects: {
+    }],
+    projects: [{
         type: Schema.Types.ObjectId,
         ref: "Project"
-    }
+    }]
 })
 
 module.exports = mongoose.model("Inscription", InscriptionSchema)

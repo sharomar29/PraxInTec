@@ -28,12 +28,20 @@ const ProjectSchema = new  Schema({
         default: 'iniciado'
     },
     budget: {
-        type: Number
+        type: String
     },
-    objectives:{
+    objectives:[{
         type: Schema.Types.ObjectId,
         ref: "Objective"
-    }
+    }],
+    inscriptions: [{
+        type: Schema.Types.ObjectId,
+        ref: "Inscription"
+    }],
+    advances: [{
+        type: Schema.Types.ObjectId,
+        ref: "Advance"
+    }]
 })
 
 module.exports = mongoose.model("Project", ProjectSchema)

@@ -2,9 +2,9 @@ const Objective = require('../models/objective')
 const projectService = require("./project")
 
 createObjective = async (objective) => {
-    let ObjectiveInstance = new Objective(objective)
-    created_objective = await AdvanceInstance.save()
-    await projectService.UpdateAdvance(objective['projects'], created_objective['_id'])
+    let objectiveInstance = new Objective(objective)
+    created_objective = await objectiveInstance.save()
+    await projectService.UpdateObjective(objective['projects'], created_objective['_id'])
     return created_objective
 }
 
@@ -23,9 +23,20 @@ updateObjective = async (objectiveId, objective) => {
     return newObjective
 }
 
+deleteObjective = async (objectiveId) => {
+    let objective = await Objective.findByIdAndDelete(objectiveId)
+    return objective
+},
+
+deleteObjective = async (objectiveId) => {
+    let objective = await Objective.findByIdAndDelete(objectiveId)
+    return objective
+}
+
 module.exports = {
     createObjective,
     getObjectives,
     getObjectiveById,
-    updateObjective
+    updateObjective,
+    deleteObjective
 }

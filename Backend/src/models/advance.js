@@ -5,7 +5,7 @@ const User = require('./user')
 
 const AdvanceSchema = new Schema({
     date: {
-        type: Date,
+        type: String,
         required: false
     },
     description: {

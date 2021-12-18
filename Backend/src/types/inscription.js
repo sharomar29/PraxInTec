@@ -20,14 +20,21 @@ const inscriptionType = gql`
         role: String
         state: String
         projects:[Project]
+        inscriptions:[Inscription]
+        advances:[Advance]
     }
     type Project{
         _id: ID!
-        name: String
+          name: String
         startDate: String
         endDate: String
         isActive: Boolean
         leader: ID
+        phase: String
+        budget: String
+        objectives: [Objective]
+        inscriptions: [Inscription]
+        advances:[Advance]
     }
     type Query{
         getInscriptions:[Inscription]
@@ -41,15 +48,16 @@ const inscriptionType = gql`
             dischageDate: Date
             students: ID
             projects:ID
-        ): Advance
+        ): Inscription
         updateInscription(
             _id: ID!
             state: String
             admissionDate: String
             dischageDate: Date
-            students: ID
-            projects:ID
-        ):Advance
+        ):Inscription
+        deleteInscription(
+            _id: ID!
+        ):Inscription
     }
 
 `;

@@ -10,6 +10,7 @@ const advanceResolvers ={
         },
         getAdvanceById: async (parent,args)=>{
             let advance = await advanceService.getAdvanceById(args._id)
+            return advance
         }
     },
     Mutation:{

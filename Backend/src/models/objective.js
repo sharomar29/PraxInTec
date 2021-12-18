@@ -7,15 +7,15 @@ const ObjectiveSchema = new Schema({
     description: {
         type: String
     },
-    ObjectiveType: {
+    objectiveType: {
         type: String,
         enum: ['general', 'especifico'],
         default: 'general'
     },
-    projects: [{
+    projects: {
         type: Schema.Types.ObjectId,
         ref: "Project"
-    }]
+    }
 })
 
 module.exports = mongoose.model("Objective",ObjectiveSchema)
