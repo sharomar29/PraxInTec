@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pagina Login JASAF</title>
+        <link rel="stylesheet" href="/css/base.scss"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </head>
+
+<body>
+    <header>
+        <div id="header">
+            <h1 id="nombre-app">PraxInTec</h1>
+            <nav class="navmenu">
+                <a class="refmenu" href="#">Inicio</a>
+                <a class="refmenu" href="#">Vista 1</a>
+                <a class="refmenu" href="#">Vista 2</a>
+                <a class="refmenu" href="#">Vista 3</a>
+            </nav>
+    
+        </div>
+    </header>
+    <h2>Registro de Usuario</h2>
+    <div id="campos" class="container-filters">
+        <form action="get" id="formulario" name="fornulario">
+            <legend> <u>Información Usuario</u> </legend>
+            <hr> <br>
+            <div class="">
+    
+                <label for="IDusuario">ID Usuario</label>
+                <input type="text" id="IDUsuario">
+                <label for="role">Tipo Usuario</label>
+                <select name="roleUsuario" id="role">
+                    <option value="">--selección--</option>
+                    <option value="Administrador" name="Administrador">Administrador</option>
+                    <option value="Lider" name="Lider">Lider</option>
+                    <option value="Estudiante" name="Estudiante">Estudiante</option>
+                </select><br><br>
+    
+    
+                <div>
+                    <label for="identification">Identificación</label>
+                    <input type="text" required id="identification"><br>
+                </div><br><br>
+    
+            </div>
+    
+            <div id="datospersonal">
+                <legend><u>Datos Personales</u></legend>
+                <hr> <br>
+    
+                <label for="name">Nombres</label> 
+                <input type="text" required id="name">
+                <label for="lastName">Apellidos</label>
+                <input type="text" required id="lastName">
+            </div><br><br>
+    
+            <div id="Contactos">
+                <legend><u>Datos De Ingreso</u></legend>
+                <hr><br><br>
+                <label for="mail"></label>Email</label>
+                <input type="text" id="mail">
+                <label for="Password">Contraseña</label>
+                <input type="text" id="password">
+            </div> <br>
+    
+    
+        </form>
+    
+    </div>
+    <div class="botones">
+        <button form="formulario" type="reset" class="small-button-submit">Cancelar</button>
+        <button form="formulario" type="submit" class="small-button-submit">Guardar</button>
+      
+    </div>
+    
+    
+    </body>
+    
+    </html>
